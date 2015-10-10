@@ -71,7 +71,7 @@ hist(stepdata$total_steps,
      col="blue")
 ```
 
-![](PA1_files/figure-html/unnamed-chunk-2-1.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-2-1.png) 
 
 ```r
 mn <- mean(stepdata$total_steps, na.rm = TRUE)
