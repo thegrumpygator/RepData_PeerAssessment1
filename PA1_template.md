@@ -68,7 +68,7 @@ head(stepdata)
 ```r
 hist(stepdata$total_steps, 
      breaks=20, 
-     main="Total Daily Steps", 
+     main="Histogram: Total Number of Steps Taken Each Day", 
      xlab="Total Number of Steps Per Day",
      col="blue")
 ```
@@ -115,9 +115,9 @@ head(intervalData)
 ```r
 g = ggplot(intervalData, aes(x=interval, y=intAve)) +
      geom_line() +
-     xlab("Interval") + 
-     ylab("Number of Steps") +
-     ggtitle("Average Interval Steps")
+     xlab("5-minute Interval") + 
+     ylab("Average Number of Steps") +
+     ggtitle("Average Number of Steps vs. 5-minute Interval")
 g
 ```
 
@@ -136,8 +136,8 @@ intervalData[which.max(intervalData$intAve),]
 ##      (int)    (dbl)
 ## 1      835 206.1698
 ```
-From this we see (and is corroborated by the figure above) that the max of 206.2 steps was earned
-during the 5-minute interval that began at 0835.
+**From this we see (and is corroborated by the figure above) that the max of 206.2 steps was earned
+during the 5-minute interval that began at 0835.**
 
 
 
@@ -157,8 +157,8 @@ sum(is.na(data$steps))
 
 2. Devise a strategy for filling in all of the missing values in the dataset. The strategy does not need to be sophisticated. For example, you could use the mean/median for that day, or the mean for that 5-minute interval, etc.
 
-Since people's daily schedules are not synchronized down to 5-minute intervals, i will not use
-the mean 5-minute step count for the corresponding interval for the gap-fil. To be slightly conservative, I will instead use the mean 5-minute stepcount for the entire data set. 
+**Since people's daily schedules are not synchronized down to 5-minute intervals, i will not use
+the mean 5-minute step count for the corresponding interval for the gap-fil. To be slightly conservative, I will instead use the mean 5-minute stepcount for the entire data set. **
 
 3. Create a new dataset that is equal to the original dataset but with the missing data filled in.
 
@@ -214,7 +214,7 @@ head(stepdataNew)
 ```r
 hist(stepdataNew$total_steps, 
      breaks=20, 
-     main="Total Daily Steps - with gap-filling", 
+     main="Total Daily Steps - Missing Values Inputed", 
      xlab="Total Number of Steps Per Day",
      col="blue")
 ```
